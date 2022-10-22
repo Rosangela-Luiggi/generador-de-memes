@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Editor de Memes</title>
+</head>
+<body>
+    <div class="container-main">
+        <header>
+        <h1>Generador de Memes.</h1>
+        <div class="container-button">
+            <button> <i class="fa-solid fa-file-image"></i>Imagen</button>
+            <button> <i class="fa-solid fa-font"></i>Texto</button>
+            <button> <i class="fa-solid fa-lightbulb"></i>Modo Oscuro</button>
+            <button> <i class="fa-regular fa-lightbulb"></i>Modo Claro</button>
+        </div>
+        </header>
+        <main>
+        <Section class="image-view">
+            <div class="top-text">
+                <p>TOP TEXT</p>
+            </div>
+
+            <div class="img-div">
+
+            </div>
+
+            <div class="bottom-text">
+                <p>BOTTOM TEXT</p>
+            </div>
+            <button class="button-download"><i class="fa-solid fa-download"></i> Descargar Memes</button>
+        </Section>
+        </main>
+    </div>
+    <aside>
+        
+        <section class="img-modifier">
+            <h2>imagen</h2>
+
+            <div>
+                <label for="url-field">URL</label>
+                <input id="url-field" type="url" name="url"   aria-label="url"  required/>
+            </div>
+
+            <div>
+                <h3>Fondo</h3>
+
+                <div>
+                    <input id="background-color" type="color" name="color" aria-label="color" value="#FF00FF"/>
+                </div>
+                <div>
+                    <select name="background-modifications" id="background-modifications">
+                        <option value="none">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="contrast">Diferencia</option>
+                        <option value="brightness">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                      </select>
+                </div>
+            </div>
+
+            <div>
+                <h3>Filtro</h3>
+                <div>
+                    <label for="range-brightness">Brillo</label>
+                    <input id="range-brightness" type="range" name="brightness"   aria-label="brightness" />
+                </div>
+                <div>
+                    <label for="range-opacity">Opacidad</label>
+                    <input id="range-opacity" type="range" name="pacity"   aria-label="opacity"/>
+                </div>
+                <div>
+                    <label for="range-contrast">Contraste</label>
+                    <input id="range-contrast" type="range" name="contrast"   aria-label="contrast"/>
+                </div>
+                <div>
+                    <label for="range-blur">Desenfoque</label>
+                    <input id="range-blur" type="range" name="blur"   aria-label="blur"/>
+                </div>
+                <div>
+                    <label for="range-grayscale">Escala de Grises</label>
+                    <input id="range-grayscale" type="range" name="grayscale"   aria-label="grayscale"/>
+                </div>
+                <div>
+                    <label for="range-sepia">Sepia</label>
+                    <input id="range-sepia" type="range" name="sepia"   aria-label="sepia" />
+                </div>
+                <div></div>
+                    <label for="range-hue">Hue</label>
+                    <input id="range-hue" type="range" name="hue"   aria-label="hue" />
+                <div>
+                    <label for="range-saturated">Saturado</label>
+                    <input id="range-saturated" type="range" name="saturated" aria-label="saturated" />
+                </div>
+                <div>
+                    <label for="range-adverse">Negativo</label>
+                    <input id="range-adverse" type="range" name="adverse" aria-label="adverse" />
+                </div>
+            </div>
+            <button>Restablecer</button>
+        </section>
+
+        <section class="text-modifier">
+            <h2>Texto</h2>
+
+            <div>
+                <label for="lb-top-text">Superior</label>
+                <input id="lb-top-text" type="text" name="text" aria-label="text" />
+            </div>
+
+            <div>
+                <input type="checkbox" id="checkbox-top-text" value="first-checkbox">
+                <label for="checkbox-top-text">Sin Texto Superior</label>
+            </div>
+
+            <div>
+                <label for="lb-bottom-text">Inferior</label>
+                <input id="lb-bottom-text" type="text" name="text" aria-label="text" />
+            </div>
+
+            <div>
+                <input type="checkbox" id="checkbox-bottom-text" value="second-checkbox">
+                <label for="checkbox-bottom-text">Sin Texto Superior</label>
+            </div>
+
+            <div>
+                <h3>Fuente</h3>
+                <select name="font" id="font-family">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter" >American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans Ms">Comic Sans Ms</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+
+                <div>
+                    <input id="font-size" type="number" name="size" aria-label="size" min="10"   value="10"/>
+                </div>
+
+                <div>
+                    <button><i class="fa-solid fa-align-left"></i></button>
+                    <button><i class="fa-solid fa-align-center"></i></button>
+                    <button><i class="fa-solid fa-align-right"></i></button>
+
+                </div>
+            </div>
+
+            <div>
+                <input id="color-font" type="color" name="color" aria-label="color" value="#000000"/>
+                <input id="background-font" type="color" name="color" aria-label="color" value="#FFFFFF"/>
+            </div>
+            <div>
+                <input type="checkbox" id="checkbox-background" value="third-checkbox">
+                <label for="checkbox-background">Fondo Transparente</label>
+            </div>
+            <div>
+                <h3>Contorno</h3>
+                <button>Ninguno</button>
+                <button>Claro</button>
+                <button>Oscuro</button>
+            </div>
+
+            <div>
+                <label for="spacing">Espaciado</label>
+                <input id="spacing" type="number" name="spacing"  min="10" max="50"   value="10"/>
+            </div>
+
+           <select name="" id="">
+            <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+           </select>
+        </section>
+
+    </aside>
+    
+</body>
+</html>
