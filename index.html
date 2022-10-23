@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- estilos css -->
     <link rel="stylesheet" href="style.css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -11,50 +12,62 @@
 </head>
 <body>
     <div class="container-main">
+        <!-- inicio del header -->
         <header>
         <h1>Generador de Memes.</h1>
         <div class="container-button">
-            <button> <i class="fa-solid fa-file-image"></i>Imagen</button>
-            <button> <i class="fa-solid fa-font"></i>Texto</button>
-            <button> <i class="fa-solid fa-lightbulb"></i>Modo Oscuro</button>
-            <button> <i class="fa-regular fa-lightbulb"></i>Modo Claro</button>
+            <button> <i class="fa-solid fa-file-image"></i> Imagen</button>
+            <button> <i class="fa-solid fa-font"></i> Texto</button>
+            <button> <i class="fa-solid fa-lightbulb"></i> Modo Oscuro</button>
+            <button> <i class="fa-regular fa-lightbulb"></i> Modo Claro</button>
         </div>
         </header>
+        <!-- fin del header -->
+        <!-- inicio main -->
         <main>
-        <Section class="image-view">
-            <div class="top-text">
+            <!-- para mostrar la image, con un texto en la parte superior e inferior-->
+        <Section class="container-image">
+            <!-- texto superior -->
+            <div class="top-text"> 
                 <p>TOP TEXT</p>
             </div>
 
             <div class="img-div">
 
-            </div>
+                <!-- aca va la imagen -->
 
-            <div class="bottom-text">
+            </div>
+            <!-- texto interior -->
+            <div class="bottom-text"> 
                 <p>BOTTOM TEXT</p>
             </div>
+            <!-- boton para descargar la imagen -->
             <button class="button-download"><i class="fa-solid fa-download"></i> Descargar Memes</button>
         </Section>
         </main>
+        <!-- fin del main -->
     </div>
+    <!-- inicio del aside -->
     <aside>
-        
-        <section class="img-modifier">
+        <span id="close">&times;</span>
+        <!-- primera seccion---Modal para imagen-->
+        <section class="modal-img">
+            
             <h2>imagen</h2>
 
             <div>
-                <label for="url-field">URL</label>
-                <input id="url-field" type="url" name="url"   aria-label="url"  required/>
+                <label for="url-img">URL</label>
+                <input id="url-img" type="url" name="url"   aria-label="url"  required/>
             </div>
 
             <div>
                 <h3>Fondo</h3>
 
                 <div>
-                    <input id="background-color" type="color" name="color" aria-label="color" value="#FF00FF"/>
+                    <input id="bg-color" type="color" name="color" aria-label="color" value="#FF00FF"/>
                 </div>
                 <div>
-                    <select name="background-modifications" id="background-modifications">
+                    <select name="bg-modifications" id="background">
                         <option value="none">Ninguno</option>
                         <option value="lighten">Aclarar</option>
                         <option value="darken">Oscurecer</option>
@@ -105,31 +118,32 @@
             </div>
             <button>Restablecer</button>
         </section>
-
-        <section class="text-modifier">
+        <!-- segunda seccion---Modal para textos-->
+        <section class="modal-text">
+            
             <h2>Texto</h2>
 
-            <div>
+            <div class="label-tb">
                 <label for="lb-top-text">Superior</label>
-                <input id="lb-top-text" type="text" name="text" aria-label="text" />
+                <textarea id="lb-top-text"  name="text" aria-label="text" cols="30" rows="10"></textarea>
             </div>
 
-            <div>
+            <div class="checkbox-one">
                 <input type="checkbox" id="checkbox-top-text" value="first-checkbox">
                 <label for="checkbox-top-text">Sin Texto Superior</label>
             </div>
 
-            <div>
+            <div class=" label-tb">
                 <label for="lb-bottom-text">Inferior</label>
-                <input id="lb-bottom-text" type="text" name="text" aria-label="text" />
+                <textarea id="lb-bottom-text" name="text" aria-label="text"  cols="30" rows="10"></textarea>
             </div>
 
-            <div>
+            <div class="checkbox-one">
                 <input type="checkbox" id="checkbox-bottom-text" value="second-checkbox">
                 <label for="checkbox-bottom-text">Sin Texto Superior</label>
             </div>
 
-            <div>
+            <div class="font-container">
                 <h3>Fuente</h3>
                 <select name="font" id="font-family">
                     <option value="Arial">Arial</option>
@@ -144,49 +158,77 @@
                     <option value="Georgia">Georgia</option>
                 </select>
 
-                <div>
+                <div class="container-ipt-btn">
+
                     <input id="font-size" type="number" name="size" aria-label="size" min="10"   value="10"/>
+
+                    <div class="align-text">
+                        <button><i class="fa-solid fa-align-left"></i></button>
+                        <button><i class="fa-solid fa-align-center"></i></button>
+                        <button><i class="fa-solid fa-align-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-container">
+
+                <div class="selector-color">
+
+                    <label class="label-tb" for="color-font">Color</label>
+
+                    <div class="input-color">
+                        <input id="color-font" type="color" name="color" aria-label="color" value="#000000"/>
+                        <span>#000000</span>
+                    </div>
+
                 </div>
 
-                <div>
-                    <button><i class="fa-solid fa-align-left"></i></button>
-                    <button><i class="fa-solid fa-align-center"></i></button>
-                    <button><i class="fa-solid fa-align-right"></i></button>
+                <div class="selector-bg">
+
+                    <label class="label-tb" for="bg-font">Fondo</label>
+
+                    <div class="input-bg">
+                        <input id="bg-font" type="color" name="color" aria-label="color" value="#FFFFFF"/>
+                        <span>#FFFFFF</span>
+                    </div>
 
                 </div>
             </div>
+            <div>
+                <input type="checkbox" id="checkbox-bg" value="third-checkbox">
+                <label for="checkbox-bg">Fondo Transparente</label>
+            </div>
 
-            <div>
-                <input id="color-font" type="color" name="color" aria-label="color" value="#000000"/>
-                <input id="background-font" type="color" name="color" aria-label="color" value="#FFFFFF"/>
-            </div>
-            <div>
-                <input type="checkbox" id="checkbox-background" value="third-checkbox">
-                <label for="checkbox-background">Fondo Transparente</label>
-            </div>
-            <div>
+            <div class="container-outline">
                 <h3>Contorno</h3>
-                <button>Ninguno</button>
-                <button>Claro</button>
-                <button>Oscuro</button>
+                <div class="btn-outline">
+                    <button>Ninguno</button>
+                    <button>Claro</button>
+                    <button>Oscuro</button>
+                </div>
             </div>
 
-            <div>
-                <label for="spacing">Espaciado</label>
+            <div class="container-spacing">
+                <label class="label-tb" for="spacing">Espaciado</label>
                 <input id="spacing" type="number" name="spacing"  min="10" max="50"   value="10"/>
             </div>
 
-           <select name="" id="">
-            <option value="0.8">0.8</option>
-            <option value="1">1</option>
-            <option value="1.2">1.2</option>
-            <option value="1.5">1.5</option>
-            <option value="2">2</option>
-            <option value="2.5">2.5</option>
-           </select>
+            <div>
+                <h3>Interliniado</h3>
+
+                <select name="line-spacing" id="line-spacing" value="1.2">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
         </section>
 
     </aside>
-    
+        <!-- para el javascript -->
+    <script src="main.js"></script>
 </body>
 </html>

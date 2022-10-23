@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 body{
     
@@ -12,30 +11,33 @@ body{
     background-color: antiquewhite;
 }
 .container-main{
-    width: 80%;
+    width: 82%;
     height: 100%;
     background-color: blueviolet;
 }
 header{
-    height: 20%;
+    height: 150px;
     width: 100%;
     text-align: center;
     padding: 20px;
     background-color: aqua;
+   
 }
-h1{
+header h1{
  padding-bottom: 20px;
  font-size: 40px; 
 }
 main{
-   height: 80%; 
+   height: 100%; 
    background-color: rgb(43, 226, 92);
 }
-main .image-view{
+main .container-image{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .top-text{
     width: 500px;
@@ -46,6 +48,7 @@ main .image-view{
     justify-content: center;
     font-weight: bold;
     font-size: 25px;
+    margin-top: 60px;
 }
 .img-div{
     width: 500px;
@@ -61,17 +64,139 @@ main .image-view{
     justify-content: center;
     font-weight: bold;
     font-size: 25px;
+    
 }
 .button-download{
-    margin: 20px;
+    margin: 50px 0;
     padding: 15px;
     background-color: green;
     border: none;
 }
 aside{
-    width: 20%;
+    width: 18%;
     background-color: blue;
+    position: relative;
 }
-.img-modifier{
+aside #close{
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    right: 10px;
+    top:5px
+}
+.modal-img{
     display: none;
 }
+/* aside dos ---- texto  */
+.modal-text{
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+}
+
+.modal-text h2{
+    padding-bottom: 20px;
+    text-align: center;
+}
+.label-tb{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+.label-tb textarea{
+    width: 100%;
+    height: 30px;
+
+}
+.checkbox-one{
+    padding: 10px 0;
+    font-size: 11px;
+}
+
+.modal-text .font-container{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+h3{
+    margin: 5px 0;
+    font-size: 15px;
+}
+.modal-text .font-container #font-family{
+ width: 100%;
+ height: 30px;
+ margin-bottom: 3px;
+ cursor: pointer;
+}
+.container-ipt-btn{
+    display: flex;
+    gap: 7px;
+}
+#font-size{
+    width: 50%;
+    height: 30px;
+}
+.container-ipt-btn .align-text{
+    width: 50%;
+    height: 30px;
+}
+
+.container-ipt-btn .align-text button{
+    width: 31px;
+    height: 30px;
+    cursor: pointer;
+}
+.color-container{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    
+}
+.color-container .selector-color .input-color, .input-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100%;
+    height: 30px;
+    gap: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 12px;
+    background-color: gray;
+    
+}
+
+#color-font, #bg-font{
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    border-radius: 50%;  
+    cursor: pointer;
+}
+.container-outline{
+    margin:  15px 0;
+}
+
+.container-outline .btn-outline button{
+    width: 30%;
+    height: 30px;
+    cursor: pointer;
+
+}
+.container-spacing #spacing{
+    width: 100%;
+    height: 30px;
+    
+}
+#line-spacing{
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+
+}
+
+
