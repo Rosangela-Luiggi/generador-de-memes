@@ -53,70 +53,69 @@
         <!-- primera seccion---Modal para imagen-->
         <section class="modal-img">
             
-            <h2>imagen</h2>
+            <h2>Imagen</h2>
 
-            <div>
+            <div class="label-url">
                 <label for="url-img">URL</label>
                 <input id="url-img" type="url" name="url"   aria-label="url"  required/>
             </div>
-
-            <div>
-                <h3>Fondo</h3>
-
-                <div>
+            <h3>Fondo</h3>
+            <div class="container-bg">
+                <div class="input-color-img">
                     <input id="bg-color" type="color" name="color" aria-label="color" value="#FF00FF"/>
+                    <span>#FF00FF</span>
                 </div>
-                <div>
-                    <select name="bg-modifications" id="background">
-                        <option value="none">Ninguno</option>
-                        <option value="lighten">Aclarar</option>
-                        <option value="darken">Oscurecer</option>
-                        <option value="contrast">Diferencia</option>
-                        <option value="brightness">Luminosidad</option>
-                        <option value="multiply">Multiplicar</option>
-                      </select>
-                </div>
+                <select name="bg-modifications" id="background">
+                    <option value="none">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="contrast">Diferencia</option>
+                    <option value="brightness">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
+                </select>
             </div>
+           
 
-            <div>
+            <div class="container-ft">
                 <h3>Filtro</h3>
-                <div>
+                <div class="label-Ib">
                     <label for="range-brightness">Brillo</label>
                     <input id="range-brightness" type="range" name="brightness"   aria-label="brightness" />
                 </div>
-                <div>
+                <div class="label-Ib">
                     <label for="range-opacity">Opacidad</label>
                     <input id="range-opacity" type="range" name="pacity"   aria-label="opacity"/>
                 </div>
-                <div>
+                <div class="label-Ib">
                     <label for="range-contrast">Contraste</label>
                     <input id="range-contrast" type="range" name="contrast"   aria-label="contrast"/>
                 </div>
-                <div>
+                <div class="label-Ib">
                     <label for="range-blur">Desenfoque</label>
                     <input id="range-blur" type="range" name="blur"   aria-label="blur"/>
                 </div>
-                <div>
+                <div class="label-Ib">
                     <label for="range-grayscale">Escala de Grises</label>
                     <input id="range-grayscale" type="range" name="grayscale"   aria-label="grayscale"/>
                 </div>
-                <div>
+                <div class="label-Ib">
                     <label for="range-sepia">Sepia</label>
                     <input id="range-sepia" type="range" name="sepia"   aria-label="sepia" />
                 </div>
-                <div></div>
+                <div class="label-Ib">
                     <label for="range-hue">Hue</label>
                     <input id="range-hue" type="range" name="hue"   aria-label="hue" />
-                <div>
+                </div>
+                <div class="label-Ib">
                     <label for="range-saturated">Saturado</label>
                     <input id="range-saturated" type="range" name="saturated" aria-label="saturated" />
                 </div>
-                <div>
+                <div class="label-Ib">
                     <label for="range-adverse">Negativo</label>
                     <input id="range-adverse" type="range" name="adverse" aria-label="adverse" />
                 </div>
             </div>
-            <button>Restablecer</button>
+            <button id="btn-reset">Restablecer</button>
         </section>
         <!-- segunda seccion---Modal para textos-->
         <section class="modal-text">
