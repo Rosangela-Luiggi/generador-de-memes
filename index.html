@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- letra body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- letra h1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap" rel="stylesheet">
     <!-- estilos css -->
     <link rel="stylesheet" href="style.css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- boton-descarga -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <title>Editor de Memes</title>
 </head>
-<body>
+<body class="dark-mode">
     <div class="container-main">
         <!-- inicio del header -->
         <header>
-        <h1>Generador de Memes.</h1>
-        <div class="container-button">
-            <button> <i class="fa-solid fa-file-image"></i> Imagen</button>
-            <button> <i class="fa-solid fa-font"></i> Texto</button>
-            <button> <i class="fa-solid fa-lightbulb"></i> Modo Oscuro</button>
-            <button> <i class="fa-regular fa-lightbulb"></i> Modo Claro</button>
+        <h1 id="titulo">Generador de Memes 😆</h1>
+        <div class="container-btn">
+            <button id="btn-modal-img"> <i class="fa-solid fa-file-image"></i> Imagen</button>
+            <button id= "btn-modal-text"> <i class="fa-solid fa-font"></i> Texto</button>
+            <button id="btnMode"> <i class="fa-solid fa-lightbulb"></i> Modo Oscuro</button>
         </div>
         </header>
         <!-- fin del header -->
@@ -27,19 +38,21 @@
         <main>
             <!-- para mostrar la image, con un texto en la parte superior e inferior-->
         <Section class="container-image">
-            <!-- texto superior -->
-            <div class="top-text"> 
-                <p>TOP TEXT</p>
-            </div>
+            <div id="image-meme">
+                <!-- texto superior -->
+                <div class="top-text"> 
+                    <p>TOP TEXT</p>
+                </div>
 
-            <div class="img-div">
+                <div class="img-div">
 
                 <!-- aca va la imagen -->
 
-            </div>
-            <!-- texto interior -->
-            <div class="bottom-text"> 
-                <p>BOTTOM TEXT</p>
+                </div>
+                <!-- texto interior -->
+                <div class="bottom-text"> 
+                    <p>BOTTOM TEXT</p>
+                </div>
             </div>
             <!-- boton para descargar la imagen -->
             <button class="button-download"><i class="fa-solid fa-download"></i> Descargar Memes</button>
@@ -48,7 +61,7 @@
         <!-- fin del main -->
     </div>
     <!-- inicio del aside -->
-    <aside>
+    <aside id="modal">
         <span id="close">&times;</span>
         <!-- primera seccion---Modal para imagen-->
         <section class="modal-img">
@@ -118,7 +131,7 @@
             <button id="btn-reset">Restablecer</button>
         </section>
         <!-- segunda seccion---Modal para textos-->
-        <section class="modal-text">
+        <section id="modal-tx" class="modal-text">
             
             <h2>Texto</h2>
 

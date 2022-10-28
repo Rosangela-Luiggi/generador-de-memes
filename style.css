@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+:root{
+    --primario: #bc4ed8;
+    --secundario:  #c8c7c3;
+    --tercero: #f988ff;
+    --cuarto: #4b0353;
+    --quinto: #26b13b;  
 }
 body{
     
@@ -9,27 +17,41 @@ body{
     display: flex;
     width: 100%;
     background-color: antiquewhite;
+    font-family: 'PT Serif', serif;
 }
 .container-main{
     width: 82%;
     height: 100%;
-    background-color: blueviolet;
 }
+/* inicio estilos header */
 header{
-    height: 150px;
+    height: 120px;
     width: 100%;
     text-align: center;
-    padding: 20px;
-    background-color: aqua;
+    padding: 15px;
+    background-color: var(--primario);
    
 }
 header h1{
  padding-bottom: 20px;
- font-size: 40px; 
+ font-size: 35px; 
+ font-family: 'Fascinate Inline', cursive;
 }
+
+header .container-btn button{
+    padding: 6px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* inicio estilos main */
 main{
    height: 100%; 
-   background-color: rgb(43, 226, 92);
+   background-image: url(imagenes/bg-3.jpg); 
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   background-position: center;
 }
 main .container-image{
     display: flex;
@@ -37,7 +59,6 @@ main .container-image{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%
 }
 .top-text{
     width: 600px;
@@ -48,7 +69,7 @@ main .container-image{
     justify-content: center;
     font-weight: bold;
     font-size: 25px;
-    margin-top: 60px;
+    
 }
 .img-div{
     width: 600px;
@@ -69,12 +90,16 @@ main .container-image{
 .button-download{
     margin: 40px 0;
     padding: 15px;
-    background-color: green;
+    background-color: var(--quinto);
     border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
 }
+/* inicio estilos aside */
 aside{
     width: 18%;
-    background-color: blue;
+    background-color: var(--secundario);
     position: relative;
 }
 aside #close{
@@ -82,7 +107,8 @@ aside #close{
     font-size: 30px;
     font-weight: bold;
     right: 10px;
-    top:5px
+    top:5px;
+    cursor:pointer;
 }
 /* Modal uno ---- imagen */
 .modal-img{
@@ -98,21 +124,16 @@ aside #close{
 .modal-img .label-url{
     display: flex;
     flex-direction: column;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.modal-img h3{
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
 
-}
 .modal-img .label-Ib{
     display: flex;
     flex-direction: column;
     margin: 15px 0;
-    font-size: 15px;
+    font-size: 14px;
     
 }
 .modal-img .container-bg{
@@ -122,14 +143,15 @@ aside #close{
    height: 30px;
 }
 
-.modal-img .container-ft h3{
+.modal-img  h3{
 margin-top: 20px;
-font-size: 20px;
+font-size: 18px;
 font-weight: bold;
 }
 .modal-img .label-url #url-img{
     width: 100%;
     height: 30px;
+    border-radius: 5px;
 }
 .modal-img .container-bg .input-color-img{
     display: flex;
@@ -142,30 +164,32 @@ font-weight: bold;
     padding: 10px;
     font-size: 12px;
     background-color: gray; 
+    border-radius: 5px;
 }
 .input-color-img #bg-color{
-    width: 20px;
-    height: 20px;
     border: none;
-    outline: none;
-    border-radius: 50%;  
+    outline: none; 
     cursor: pointer
 }
 .modal-img .container-bg select{
     outline: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 #btn-reset{
     width: 100px;
     height: 30px;
     margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
 
 }
 
-
-
 /* Modal dos ---- texto  */
 .modal-text{
-    display: none;
     flex-direction: column;
     padding: 25px 15px;
 }
@@ -184,6 +208,7 @@ font-weight: bold;
 .label-tb textarea{
     width: 100%;
     height: 30px;
+    border-radius: 5px;
 
 }
 .checkbox-one{
@@ -205,6 +230,7 @@ h3{
  height: 30px;
  margin-bottom: 3px;
  cursor: pointer;
+ border-radius: 5px;
 }
 .container-ipt-btn{
     display: flex;
@@ -213,16 +239,19 @@ h3{
 #font-size{
     width: 50%;
     height: 30px;
+    border-radius: 5px;
 }
 .container-ipt-btn .align-text{
     width: 50%;
     height: 30px;
+    border-radius: 5px;
 }
 
 .container-ipt-btn .align-text button{
     width: 31px;
     height: 30px;
     cursor: pointer;
+    border-radius: 5px;
 }
 .color-container{
     width: 100%;
@@ -242,6 +271,7 @@ h3{
     margin: 5px 0;
     font-size: 12px;
     background-color: gray;
+    border-radius: 5px;
     
 }
 
@@ -261,18 +291,59 @@ h3{
     width: 30%;
     height: 30px;
     cursor: pointer;
+    border-radius: 5px;
 
 }
 .container-spacing #spacing{
     width: 100%;
     height: 30px;
+    border-radius: 5px;
     
 }
 #line-spacing{
     width: 100%;
     height: 30px;
     cursor: pointer;
+    border-radius: 5px;
 
 }
+/*Modo Oscuro */
+.dark-mode #titulo{
+    color: white;
+}
 
+.dark-mode aside{
+    background-color: #000000d8;
+    color: white;
+}
+.dark-mode main{
+    background-image: url(imagenes/bg-dm.jpg);
+}
+.dark-mode header{
+    background-color:#000000eb ;
+    color: white;
+}
+.open{
+    display: flex;
+}
+.close{
+    display: none;
+}
+/* boton de color */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+  }
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+  }
+  
+ 
 
