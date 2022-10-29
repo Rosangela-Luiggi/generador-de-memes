@@ -22,7 +22,7 @@
 
     <title>Editor de Memes</title>
 </head>
-<body class="dark-mode">
+<body>
     <div class="container-main">
         <!-- inicio del header -->
         <header>
@@ -37,14 +37,14 @@
         <!-- inicio main -->
         <main>
             <!-- para mostrar la image, con un texto en la parte superior e inferior-->
-        <Section class="container-image">
+        <section class="container-image">
             <div id="image-meme">
                 <!-- texto superior -->
                 <div class="top-text"> 
                     <p>TOP TEXT</p>
                 </div>
 
-                <div class="img-div">
+                <div id="img-meme" class="img-div">
 
                 <!-- aca va la imagen -->
 
@@ -62,15 +62,14 @@
     </div>
     <!-- inicio del aside -->
     <aside id="modal">
-        <span id="close">&times;</span>
+        <span id="close-btn" >&times;</span>
         <!-- primera seccion---Modal para imagen-->
-        <section class="modal-img">
-            
+        <section id="modal-image" class="modal-img ">
             <h2>Imagen</h2>
 
             <div class="label-url">
-                <label for="url-img">URL</label>
-                <input id="url-img" type="url" name="url"   aria-label="url"  required/>
+                    <label for="url-img">URL</label>
+                    <input id="url-img" type="url" name="url"   aria-label="url"  required/>
             </div>
             <h3>Fondo</h3>
             <div class="container-bg">
@@ -129,9 +128,10 @@
                 </div>
             </div>
             <button id="btn-reset">Restablecer</button>
+        
         </section>
         <!-- segunda seccion---Modal para textos-->
-        <section id="modal-tx" class="modal-text">
+        <section id="modal-tx" class="modal-text close">
             
             <h2>Texto</h2>
 

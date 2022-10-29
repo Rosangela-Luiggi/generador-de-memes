@@ -12,17 +12,19 @@ let modal = $("#modal");
 let xCloseModal = $("#close-btn");
 let modalTexto = $("#modal-tx");
 let modalImg = $("#modal-image");
+const imgMeme = $("#img-meme");
+const inputUrl = $("#url-img");
 //funciones
 
 
 // boton de descarga
-const descargarMeme = () => {
+/* const descargarMeme = () => {
 
     domtoimage.toBlob(contenedorImagen).then(function (blob) {
       saveAs(blob, 'mi-meme.jpg');
     });
   
-  };
+  }; */
 
 
   // eventos
@@ -34,19 +36,25 @@ btn.addEventListener( "click", ()=>{
 
 //Modal
 xCloseModal.addEventListener('click', ()=> {
-    modal.classList.remove('open')
-})
+    modal.classList.add('close')
+});
 
 btnText.addEventListener('click', ()=>{
-        modal.classList.add('open')
-        modalImg.classList.remove('close')
-        modalTexto.classList.toggle('close')
+  modal.classList.add('open')
+  modalImg.classList.add('close')
+  modalTexto.classList.remove('close')
 });
 
 btnImg.addEventListener('click', ()=>{
-    modal.classList.toggle('open')
-    modalImg.classList.remove('close')
-    modalTexto.classList.toggle('close')
+  modal.classList.add('open')
+  modalImg.classList.remove('close')
+  modalTexto.classList.add('close')
 });
-  
 
+//Insertar Imagen
+/* inputUrl.addEventListener('blur', (event)=>{
+  let elemento = event.target;
+  imgMeme.innerHTML = `<img src= ${elemento.src} alt= "imagen meme">`
+
+
+});  */
