@@ -76,6 +76,10 @@ main .container-image{
     height:350px;
     background-color: #000000;
 }
+.img-div img{
+ width: 100%;
+ height: 100%;
+}
 .bottom-text{
     width: 600px;
     height: 100px;
@@ -95,6 +99,7 @@ main .container-image{
     border-radius: 5px;
     font-size: 15px;
     color: #ffffff;
+    cursor: pointer;
 }
 /* inicio estilos aside */
 aside{
