@@ -15,7 +15,7 @@ let modalImg = $("#modal-image");
 const imgMeme = $("#img-meme");
 const inputUrl = $("#url-img");
 const btnDownload = $(".button-download");
-const contenedorImg = $(".container-image");
+const contenedorImg = $("#image-meme");
 let inputColor = $("#bg-font");
 let inputCFuente = $("#color-font");
 let divTop = $(".top-text");
@@ -28,21 +28,21 @@ let inputTextoT = $("#lb-top-text");
 let inputTextoB = $("#lb-bottom-text")
 let selectLetra = $("#font-family");
 let inputTamañoF = $("#font-size");
+let derecha = $("#btn-right");
+let centrado = $("#btn-center");
+let izquierda = $("#btn-left");
+
 //funciones
-
-
 // boton de descarga
-/* const descargarMeme = () => {
-
+const descargarMeme = () => {
     domtoimage.toBlob(contenedorImg).then(function (blob) {
       saveAs(blob, 'mi-meme.jpg');
     });
   
-  };  */
+  }; 
 
 
   // eventos
-
   //Modo Oscuro
 btn.addEventListener( "click", ()=>{
     body.classList.toggle("dark-mode")
@@ -76,8 +76,6 @@ inputUrl.addEventListener('input', (event)=>{
 });
 
 
-
-
 //TEXTO
 //Textos
 inputTextoT.addEventListener('input', (event)=>{
@@ -103,17 +101,16 @@ inputTamañoF.addEventListener('input', (event)=>{
 });
 
 // Formato
-let derecha = $("#btn-right");
 derecha.addEventListener('click', (event)=>{
   textoT.style.textAlign = event.target.value;
   textoB.style.textAlign = event.target.value;
 }); 
-let centrado = $("#btn-center");
+
 centrado.addEventListener('click', (event)=>{
   textoT.style.textAlign = event.target.value;
   textoB.style.textAlign = event.target.value;
 });
-let izquierda = $("#btn-left");
+
 izquierda.addEventListener('click', (event)=>{
   textoT.style.textAlign = event.target.value;
   textoB.style.textAlign = event.target.value;
@@ -134,6 +131,8 @@ inputColor.addEventListener ('blur', (event)=>{
   divBottom.style.backgroundColor = `${colorBg}`;
   codigoHex.innerHTML = `${colorBg}`.toUpperCase();
 });
+//Descargar Imagen
+btnDownload.addEventListener('click', descargarMeme);
 
 
 
