@@ -41,7 +41,7 @@
             <div  id="image-meme">
                 <!-- texto superior -->
                 <div class="top-text"> 
-                    <p>TOP TEXT</p>
+                    <p id="text-t">TOP TEXT</p>
                 </div>
 
                 <div id="img-meme" class="img-div">
@@ -51,7 +51,7 @@
                 </div>
                 <!-- texto interior -->
                 <div class="bottom-text"> 
-                    <p>BOTTOM TEXT</p>
+                    <p id = text-b>BOTTOM TEXT</p>
                 </div>
             </div>
             <!-- boton para descargar la imagen -->
@@ -137,7 +137,7 @@
 
             <div class="label-tb">
                 <label for="lb-top-text">Superior</label>
-                <textarea id="lb-top-text"  name="text" aria-label="text" cols="30" rows="10"></textarea>
+                <textarea id="lb-top-text"  name="text" value="TOP TEXT" cols="30" rows="10"></textarea>
             </div>
 
             <div class="checkbox-one">
@@ -147,7 +147,7 @@
 
             <div class=" label-tb">
                 <label for="lb-bottom-text">Inferior</label>
-                <textarea id="lb-bottom-text" name="text" aria-label="text"  cols="30" rows="10"></textarea>
+                <textarea id="lb-bottom-text" name="text" value="BOTTOM TEXT"  cols="30" rows="10"></textarea>
             </div>
 
             <div class="checkbox-one">
@@ -172,12 +172,12 @@
 
                 <div class="container-ipt-btn">
 
-                    <input id="font-size" type="number" name="size" aria-label="size" min="10"   value="10"/>
+                    <input id="font-size" type="number" name="size" min="10"   value="10"/>
 
                     <div class="align-text">
-                        <button><i class="fa-solid fa-align-left"></i></button>
-                        <button><i class="fa-solid fa-align-center"></i></button>
-                        <button><i class="fa-solid fa-align-right"></i></button>
+                        <button id="btn-left" value="left"><i class="fa-solid fa-align-left"></i></button>
+                        <button id="btn-center" value="center"><i class="fa-solid fa-align-center"></i></button>
+                        <button id="btn-right" value="right"><i class="fa-solid fa-align-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -189,8 +189,8 @@
                     <label class="label-tb" for="color-font">Color</label>
 
                     <div class="input-color">
-                        <input id="color-font" type="color" name="color" aria-label="color" value="#000000"/>
-                        <span>#000000</span>
+                        <input id="color-font" type="color" name="color"  value="#000000"/>
+                        <span id ="color-ff">#000000</span>
                     </div>
 
                 </div>
@@ -200,8 +200,8 @@
                     <label class="label-tb" for="bg-font">Fondo</label>
 
                     <div class="input-bg">
-                        <input id="bg-font" type="color" name="color" aria-label="color" value="#FFFFFF"/>
-                        <span>#FFFFFF</span>
+                        <input id="bg-font" type="color" name="color" value="#FFFFFF"/>
+                        <span id ="color">#FFFFFF</span>
                     </div>
 
                 </div>

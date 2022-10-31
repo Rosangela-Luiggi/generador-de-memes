@@ -16,6 +16,18 @@ const imgMeme = $("#img-meme");
 const inputUrl = $("#url-img");
 const btnDownload = $(".button-download");
 const contenedorImg = $(".container-image");
+let inputColor = $("#bg-font");
+let inputCFuente = $("#color-font");
+let divTop = $(".top-text");
+let divBottom = $(".bottom-text");
+let codigoHex = $("#color");
+let codigoLt = $("#color-ff")
+let textoT = $("#text-t");
+let textoB = $("#text-b");
+let inputTextoT = $("#lb-top-text");
+let inputTextoB = $("#lb-bottom-text")
+let selectLetra = $("#font-family");
+let inputTamañoF = $("#font-size");
 //funciones
 
 
@@ -61,7 +73,67 @@ btnImg.addEventListener('click', ()=>{
 inputUrl.addEventListener('input', (event)=>{
   let url = event.target.value;
   imgMeme.innerHTML = `<img src="${url}" alt= "imagen meme">`
+});
+
+
+
+
+//TEXTO
+//Textos
+inputTextoT.addEventListener('input', (event)=>{
+  textoT.innerText = event.target.value.toUpperCase();
+});
+
+inputTextoB.addEventListener('input', (event)=>{
+  textoB.innerText = event.target.value.toUpperCase();
+});
+
+//Fuente
+selectLetra.addEventListener('input', (event)=>{
+  let cambio = event.target.value
+  textoT.style.fontFamily = `${cambio}`
+  textoB.style.fontFamily = `${cambio}`
+});
+
+//Size Fuente
+inputTamañoF.addEventListener('input', (event)=>{
+  let medida = event.target.value;
+  textoT.style.fontSize =  `${medida}px`;
+  textoB.style.fontSize = `${medida}px`;
+});
+
+// Formato
+let derecha = $("#btn-right");
+derecha.addEventListener('click', (event)=>{
+  textoT.style.textAlign = event.target.value;
+  textoB.style.textAlign = event.target.value;
 }); 
+let centrado = $("#btn-center");
+centrado.addEventListener('click', (event)=>{
+  textoT.style.textAlign = event.target.value;
+  textoB.style.textAlign = event.target.value;
+});
+let izquierda = $("#btn-left");
+izquierda.addEventListener('click', (event)=>{
+  textoT.style.textAlign = event.target.value;
+  textoB.style.textAlign = event.target.value;
+});
+
+// Color de Texto
+inputCFuente.addEventListener ('blur', (event)=>{
+  let colorLt = event.target.value;
+  divTop.style.color = `${colorLt}`;
+  divBottom.style.color = `${colorLt}`;
+  codigoLt.innerHTML = `${colorLt}`.toUpperCase();
+});
+
+//Color de fondo
+inputColor.addEventListener ('blur', (event)=>{
+  let colorBg = event.target.value;
+  divTop.style.backgroundColor = `${colorBg}`;
+  divBottom.style.backgroundColor = `${colorBg}`;
+  codigoHex.innerHTML = `${colorBg}`.toUpperCase();
+});
 
 
 

@@ -71,6 +71,12 @@ main .container-image{
     font-size: 25px;
     
 }
+.top-text #text-t{
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+
+}
 .img-div{
     width: 600px;
     height:350px;
@@ -344,13 +350,14 @@ h3{
     background-color:#000000eb ;
     color: #ffffff;
 }
-/* Modal */
+/* Modal  js*/
 .open{
     display: flex;
 }
 .close{
     display: none;
 }
+
 /* boton de color */
 
 input[type="color"] {
