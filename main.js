@@ -41,6 +41,7 @@ let inputSepia = $("#range-sepia");
 let inputHue = $("#range-hue");
 let inputSaturado = $("#range-saturated");
 let inputNegativo = $("#range-adverse");
+let btnReset = $("#btn-reset");
 
 
 //funciones
@@ -56,8 +57,20 @@ const aplicarFiltros = () =>{
   let saturate = inputSaturado.value;
   let invert = inputNegativo.value;
 
-  imgMeme.style.filter = `brightness(${brightness}) opacity(${opacity}%) contrast(${contrast}%) blur(${blur}px) grayscale(${grayscale}%) 
-  sepia(${sepia}%) hue-rotate(${hue}deg) saturate(${saturate}%) invert(${invert}%)`
+  imgMeme.style.filter = `brightness(${brightness}) opacity(${opacity}) contrast(${contrast}%) blur(${blur}px) grayscale(${grayscale}%) sepia(${sepia}%) hue-rotate(${hue}deg) saturate(${saturate}%) invert(${invert}%)`
+}
+// reset filtros
+const restablecerFiltros =() =>{
+  inputBrillo.value = 1;
+  inputOpacidad.value = 1;
+  inputContraste.value = 100;
+  inputDesenfoque.value =0;
+  inputEscalaG.value = 0;
+  inputSepia.value = 0;
+  inputHue.value = 0;
+  inputSaturado.value = 100;
+  inputNegativo.value = 0; 
+  aplicarFiltros();
 }
 
 // formato
@@ -136,6 +149,10 @@ inputSepia.addEventListener('change', aplicarFiltros);
 inputHue.addEventListener('change', aplicarFiltros);
 inputSaturado.addEventListener('change', aplicarFiltros);
 inputNegativo.addEventListener('change', aplicarFiltros);
+
+// reset filtros
+btnReset.addEventListener('click', restablecerFiltros);
+
 
 //TEXTO
 //Textos

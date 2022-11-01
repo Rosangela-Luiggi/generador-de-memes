@@ -17,6 +17,7 @@ body{
     display: flex;
     width: 100%;
     font-family: 'PT Serif', serif;
+    z-index: -1;
 }
 .container-main{
     width: 100%;
