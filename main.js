@@ -3,9 +3,7 @@ const $ =(elemento) => document.querySelector(elemento)
 
 //variables
 let body = document.body;
-let btn = document.getElementById("btnMode")
-
-//modal
+let btnDarkMode= document.getElementById("btnMode")
 let btnImg = $("#btn-modal-img");
 let btnText = $("#btn-modal-text");
 let modal = $("#modal");
@@ -31,22 +29,63 @@ let inputTamañoF = $("#font-size");
 let derecha = $("#btn-right");
 let centrado = $("#btn-center");
 let izquierda = $("#btn-left");
+let inputColorFondo = $("#bg-color");
+let bgCodigo = $(".color-bg-img");
+let selectBlendMode = $("#bg-modifications");
+let inputBrillo = $("#range-brightness");
+let inputOpacidad = $("#range-opacity");
+let inputContraste= $("#range-contrast");
+let inputDesenfoque = $("#range-blur");
+let inputEscalaG = $("#range-grayscale");
+let inputSepia = $("#range-sepia");
+let inputHue = $("#range-hue");
+let inputSaturado = $("#range-saturated");
+let inputNegativo = $("#range-adverse");
+
 
 //funciones
+//Filtro
+const aplicarFiltros = () =>{
+  let brightness = inputBrillo.value;
+  let opacity = inputOpacidad.value;
+  let contrast = inputContraste.value;
+  let blur = inputDesenfoque.value;
+  let grayscale = inputEscalaG.value;
+  let sepia = inputSepia.value;
+  let hue = inputHue.value;
+  let saturate = inputSaturado.value;
+  let invert = inputNegativo.value;
+
+  imgMeme.style.filter = `brightness(${brightness}) opacity(${opacity}%) contrast(${contrast}%) blur(${blur}px) grayscale(${grayscale}%) 
+  sepia(${sepia}%) hue-rotate(${hue}deg) saturate(${saturate}%) invert(${invert}%)`
+}
+
+// formato
+const formato = (direccion) =>{
+  textoT.style.textAlign = direccion;
+  textoB.style.textAlign = direccion;
+}
+
 // boton de descarga
 const descargarMeme = () => {
     domtoimage.toBlob(contenedorImg).then(function (blob) {
       saveAs(blob, 'mi-meme.jpg');
     });
-  
-  }; 
 
+}; 
 
   // eventos
+ 
   //Modo Oscuro
-btn.addEventListener( "click", ()=>{
-    body.classList.toggle("dark-mode")
-});
+  btnDarkMode.addEventListener( "click", ()=>{
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")){
+      btnDarkMode.innerHTML = '<i class="fa-regular fa-lightbulb"></i> Modo Claro'
+    }else {
+      btnDarkMode.innerHTML = '<i class="fa-solid fa-lightbulb"></i> Modo Oscuro'
+    }
+
+  });
 
 //Modal
 xCloseModal.addEventListener('click', ()=> {
@@ -72,9 +111,31 @@ btnImg.addEventListener('click', ()=>{
 
 inputUrl.addEventListener('input', (event)=>{
   let url = event.target.value;
-  imgMeme.innerHTML = `<img src="${url}" alt= "imagen meme">`
+  imgMeme.style.backgroundImage = `url(${url})`;
 });
 
+// Color de fondo
+
+inputColorFondo.addEventListener ('blur', (event)=>{
+  let colorfondo = event.target.value;
+  imgMeme.style.backgroundColor = `${colorfondo}`;
+  bgCodigo.innerHTML = `${colorfondo}`.toUpperCase();
+});
+ //Blend Mode
+
+selectBlendMode.addEventListener('change', (event)=>{
+  imgMeme.style.backgroundBlendMode = event.target.value;
+});
+//Filtro
+inputBrillo.addEventListener('change', aplicarFiltros);
+inputOpacidad.addEventListener('change', aplicarFiltros);
+inputContraste.addEventListener('change', aplicarFiltros);
+inputDesenfoque.addEventListener('change', aplicarFiltros)
+inputEscalaG.addEventListener('change', aplicarFiltros);
+inputSepia.addEventListener('change', aplicarFiltros);
+inputHue.addEventListener('change', aplicarFiltros);
+inputSaturado.addEventListener('change', aplicarFiltros);
+inputNegativo.addEventListener('change', aplicarFiltros);
 
 //TEXTO
 //Textos
@@ -101,19 +162,16 @@ inputTamañoF.addEventListener('input', (event)=>{
 });
 
 // Formato
-derecha.addEventListener('click', (event)=>{
-  textoT.style.textAlign = event.target.value;
-  textoB.style.textAlign = event.target.value;
-}); 
-
-centrado.addEventListener('click', (event)=>{
-  textoT.style.textAlign = event.target.value;
-  textoB.style.textAlign = event.target.value;
+derecha.addEventListener('click', ()=>{
+ formato('right');
 });
 
-izquierda.addEventListener('click', (event)=>{
-  textoT.style.textAlign = event.target.value;
-  textoB.style.textAlign = event.target.value;
+centrado.addEventListener('click', ()=>{
+  formato('center');
+});
+
+izquierda.addEventListener('click', ()=>{
+  formato('left');
 });
 
 // Color de Texto
