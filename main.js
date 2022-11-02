@@ -14,7 +14,7 @@ const contenedorImg = $("#image-meme");
 let divTop = $(".top-text");
 let divBottom = $(".bottom-text");
 let codigoHex = $("#color");
-let codigoLt = $("#color-ff")
+let codigoLt = $("#color-ff");
 let textoT = $("#text-t");
 let textoB = $("#text-b");
 
@@ -228,9 +228,13 @@ inputColor.addEventListener ('blur', (event)=>{
 
 // sin fondo
 checkboxBg.addEventListener('change', () =>{
+  if(checkboxBg.checked){
   divTop.style.backgroundColor = 'transparent';
   divBottom.style.backgroundColor = 'transparent';
+  }
+
 });
+
 
 //Descargar Imagen
 btnDownload.addEventListener('click', descargarMeme);
