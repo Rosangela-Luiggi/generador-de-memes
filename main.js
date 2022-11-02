@@ -2,36 +2,42 @@
 const $ =(elemento) => document.querySelector(elemento)
 
 //variables
+//contenedores y etiquetas 
 let body = document.body;
-let btnDarkMode= document.getElementById("btnMode")
-let btnImg = $("#btn-modal-img");
-let btnText = $("#btn-modal-text");
 let modal = $("#modal");
 let xCloseModal = $("#close-btn");
 let modalTexto = $("#modal-tx");
 let modalImg = $("#modal-image");
 const imgMeme = $("#img-meme");
-const inputUrl = $("#url-img");
-const btnDownload = $(".button-download");
+let bgCodigo = $(".color-bg-img");
 const contenedorImg = $("#image-meme");
-let inputColor = $("#bg-font");
-let inputCFuente = $("#color-font");
 let divTop = $(".top-text");
 let divBottom = $(".bottom-text");
 let codigoHex = $("#color");
 let codigoLt = $("#color-ff")
 let textoT = $("#text-t");
 let textoB = $("#text-b");
-let inputTextoT = $("#lb-top-text");
-let inputTextoB = $("#lb-bottom-text")
-let selectLetra = $("#font-family");
-let inputTamañoF = $("#font-size");
+
+//botones
+let btnDarkMode= document.getElementById("btnMode")
+let btnImg = $("#btn-modal-img");
+let btnText = $("#btn-modal-text");
 let derecha = $("#btn-right");
 let centrado = $("#btn-center");
 let izquierda = $("#btn-left");
-let inputColorFondo = $("#bg-color");
-let bgCodigo = $(".color-bg-img");
+let btnReset = $("#btn-reset");
+const btnDownload = $(".button-download");
+
+// input y select
 let selectBlendMode = $("#bg-modifications");
+let selectLetra = $("#font-family");
+let inputTamañoF = $("#font-size");
+let inputColor = $("#bg-font");
+let inputCFuente = $("#color-font");
+let inputTextoT = $("#lb-top-text");
+let inputTextoB = $("#lb-bottom-text");
+const inputUrl = $("#url-img");
+let inputColorFondo = $("#bg-color");
 let inputBrillo = $("#range-brightness");
 let inputOpacidad = $("#range-opacity");
 let inputContraste= $("#range-contrast");
@@ -41,7 +47,11 @@ let inputSepia = $("#range-sepia");
 let inputHue = $("#range-hue");
 let inputSaturado = $("#range-saturated");
 let inputNegativo = $("#range-adverse");
-let btnReset = $("#btn-reset");
+
+//checkbox
+let checkboxTop = $("#checkbox-top-text");
+let checkboxBottom = $("#checkbox-bottom-text");
+let checkboxBg = $("checkbox-bg");
 
 
 //funciones
@@ -164,6 +174,15 @@ inputTextoB.addEventListener('input', (event)=>{
   textoB.innerText = event.target.value.toUpperCase();
 });
 
+//Sin Texto
+checkboxTop.addEventListener('change', ()=>{
+  divTop.classList.toggle('close');
+});
+checkboxBottom.addEventListener('change', ()=>{
+  divBottom.classList.toggle('close');
+});
+
+
 //Fuente
 selectLetra.addEventListener('input', (event)=>{
   let cambio = event.target.value
@@ -206,6 +225,13 @@ inputColor.addEventListener ('blur', (event)=>{
   divBottom.style.backgroundColor = `${colorBg}`;
   codigoHex.innerHTML = `${colorBg}`.toUpperCase();
 });
+
+// sin fondo
+checkboxBg.addEventListener('change', () =>{
+  divTop.style.backgroundColor = 'transparent';
+  divBottom.style.backgroundColor = 'transparent';
+});
+
 //Descargar Imagen
 btnDownload.addEventListener('click', descargarMeme);
 
