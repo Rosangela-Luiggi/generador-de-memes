@@ -27,6 +27,9 @@ let centrado = $("#btn-center");
 let izquierda = $("#btn-left");
 let btnReset = $("#btn-reset");
 const btnDownload = $(".button-download");
+let btnNinguno = $("#none");
+let btnClaro = $("#light");
+let btnOscuro = $("#dark");
 
 // input y select
 let selectBlendMode = $("#bg-modifications");
@@ -47,11 +50,12 @@ let inputSepia = $("#range-sepia");
 let inputHue = $("#range-hue");
 let inputSaturado = $("#range-saturated");
 let inputNegativo = $("#range-adverse");
+let inputEspaciado = $("#spacing");
 
 //checkbox
 let checkboxTop = $("#checkbox-top-text");
 let checkboxBottom = $("#checkbox-bottom-text");
-let checkboxBg = $("checkbox-bg");
+let checkboxBg = $("#checkbox-bg");
 
 
 //funciones
@@ -94,7 +98,6 @@ const descargarMeme = () => {
     domtoimage.toBlob(contenedorImg).then(function (blob) {
       saveAs(blob, 'mi-meme.jpg');
     });
-
 }; 
 
   // eventos
@@ -231,9 +234,41 @@ checkboxBg.addEventListener('change', () =>{
   if(checkboxBg.checked){
   divTop.style.backgroundColor = 'transparent';
   divBottom.style.backgroundColor = 'transparent';
+  }else{
+  divTop.style.backgroundColor = inputColor.value;
+  divBottom.style.backgroundColor = inputColor.value;
   }
-
 });
+// Contorno
+
+btnNinguno.addEventListener('click', ()=>{
+  textoT.style.textShadow = 'none';
+  textoB.style.textShadow = 'none';
+});
+btnClaro.addEventListener('click', ()=>{
+  textoT.style.textShadow = ' 2.5px 2.5px #FFFFFF';
+  textoB.style.textShadow = ' 2.5px 2.5px #FFFFFF';
+});
+btnOscuro.addEventListener('click', ()=>{
+  textoT.style.textShadow = ' 2.5px 2.5px #000000';
+  textoB.style.textShadow = ' 2.5px 2.5px #000000';
+});
+
+// Espaciado
+inputEspaciado.addEventListener ('input',(event)=>{
+  let relleno = event.target.value;
+divTop.style.padding = `${relleno}px`;
+divBottom.style.padding = `${relleno}px`;
+});
+
+//Interlineado
+let inputInterLinea = $("#line-spacing");
+inputInterLinea.addEventListener ('input',(event)=>{
+  let medidaLinea = event.target.value;
+divTop.style.lineHeight = `${medidaLinea}px`;
+divBottom.style.lineHeight = `${medidaLinea}px`;
+});
+
 
 
 //Descargar Imagen

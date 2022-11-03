@@ -64,17 +64,7 @@ main .container-image{
     width: 100%;
     padding: 20px;
 }
-.top-text{
-    width: 600px;
-    height: 100px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 25px;
-    
-}
+
 .top-text #text-t, #text-b{
     width: 100%;
     text-align: center;
@@ -82,24 +72,40 @@ main .container-image{
 }
 .img-div{
     width: 600px;
-    height:350px;
+    height:550px;
     background-color: #000000;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
+
+.top-text{
+    width: 600px;
+    padding: 30px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+}
+
 
 .bottom-text{
     width: 600px;
-    height: 100px;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 30px;
+    background-color: white;
+    color: black;
     font-weight: bold;
     font-size: 25px;
-    
+    position: absolute;
+    bottom: 0;
 }
+
 .button-download{
     margin: 40px 0;
     padding: 15px;
@@ -304,7 +310,6 @@ h3{
     font-size: 12px;
     background-color: #808080;
     border-radius: 5px;
-    
 }
 
 #color-font, #bg-font{
@@ -332,6 +337,7 @@ h3{
     height: 30px;
     border-radius: 5px;
     border: none;
+    outline: none;
     
 }
 #line-spacing{
@@ -340,6 +346,8 @@ h3{
     cursor: pointer;
     border-radius: 5px;
     border: none;
+    outline: none;
+    
 
 }
 /*Modo Oscuro */
