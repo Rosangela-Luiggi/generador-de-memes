@@ -1,78 +1,87 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
-:root{
+
+:root {
     --primario: #bc4ed8;
-    --secundario:  #c8c7c3;
+    --secundario: #c8c7c3;
     --tercero: #7c19ed;
     --cuarto: #8503ca;
-    --quinto: #26b13b;  
+    --quinto: #26b13b;
 }
-body{
-    
-    min-height: 100vh;
+
+body {
+    height: 100%;
     display: flex;
     width: 100%;
     font-family: 'PT Serif', serif;
     z-index: -1;
 }
-.container-main{
+
+.container-main {
     width: 100%;
     height: 100%;
 }
+
 /* inicio estilos header */
-header{
+header {
     height: 120px;
     width: 100%;
     text-align: center;
     padding: 15px;
     background-color: var(--primario);
-   
-}
-header h1{
- padding-bottom: 20px;
- font-size: 35px; 
- font-family: 'Fascinate Inline', cursive;
 }
 
-header .container-btn button{
+header h1 {
+    padding-bottom: 20px;
+    font-size: 35px;
+    font-family: 'Fascinate Inline', cursive;
+}
+
+header .container-btn button {
     padding: 6px;
     font-size: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-header .container-btn button:hover{
+
+header .container-btn button:hover {
     background-color: var(--cuarto);
 }
+
 /* inicio estilos main */
-main{
-   height: 100%; 
-   background-image: url(imagenes/bg-3.jpg); 
-   background-repeat: no-repeat; 
-   background-size: cover; 
-   background-position: center;
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(imagenes/bg-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-main .container-image{
+
+main .container-image {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 40px;
 }
 
-.top-text #text-t, #text-b{
+.top-text #text-t,
+#text-b {
     width: 100%;
     text-align: center;
     padding: 8px;
+    word-break: break-all;
 }
-.img-div{
+
+.img-div {
     width: 600px;
-    height:550px;
+    height: 550px;
     background-color: #000000;
     background-position: center;
     background-repeat: no-repeat;
@@ -83,7 +92,7 @@ main .container-image{
     position: relative;
 }
 
-.top-text{
+.top-text {
     width: 600px;
     padding: 30px;
     background-color: white;
@@ -94,8 +103,7 @@ main .container-image{
     top: 0;
 }
 
-
-.bottom-text{
+.bottom-text {
     width: 600px;
     padding: 30px;
     background-color: white;
@@ -106,8 +114,8 @@ main .container-image{
     bottom: 0;
 }
 
-.button-download{
-    margin: 40px 0;
+.button-download {
+    margin-top: 70px;
     padding: 15px;
     background-color: var(--quinto);
     border: none;
@@ -116,91 +124,104 @@ main .container-image{
     color: #ffffff;
     cursor: pointer;
 }
+
 /* inicio estilos aside */
-aside{
-    width: 18%;
+aside {
+    width: 20%;
     background-color: var(--secundario);
     position: relative;
 }
-aside #close-btn{
+
+aside #close-btn {
     position: absolute;
     font-size: 30px;
     font-weight: bold;
     right: 10px;
-    top:5px;
-    cursor:pointer;
-}
-/* Modal uno ---- imagen */
-.modal-img{
-    display: flex;
-    flex-direction: column;
-    padding: 25px 15px; 
+    top: 5px;
+    cursor: pointer;
 }
 
-.modal-img h2{
-   text-align: center;
-   padding-bottom: 20px;
+/* Modal uno ---- imagen */
+.modal-img {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-direction: column;
+    padding: 25px 15px;
 }
-.modal-img .label-url{
+
+.modal-img h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.modal-img .label-url {
     display: flex;
     flex-direction: column;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.modal-img .label-Ib{
+.modal-img .label-Ib {
     display: flex;
     flex-direction: column;
     margin: 15px 0;
     font-size: 14px;
-    
 }
 
-.modal-img .container-bg{
-   display: flex;
-   gap: 10px;
-   width: 100%;
-   height: 30px;
+.modal-img .container-bg {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: 30px;
 }
 
-.modal-img  h3{
-margin-top: 20px;
-font-size: 18px;
-font-weight: bold;
+.modal-img h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
-.modal-img .label-url #url-img{
+
+.modal-img .label-url #url-img {
     width: 100%;
     height: 30px;
     border-radius: 5px;
     border: none;
     outline: none;
 }
-.modal-img .container-bg .input-color-img{
+
+.modal-img .container-bg .input-color-img {
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    width: 90px;
+    width: 50%;
     height: 30px;
     gap: 5px;
     padding: 10px;
     font-size: 12px;
-    background-color: #808080; 
+    background-color: #808080;
     border-radius: 5px;
 }
-.input-color-img #bg-color{
+
+.input-color-img #bg-color {
     border: none;
-    outline: none; 
+    outline: none;
     cursor: pointer
 }
-.modal-img .container-bg select{
+
+.modal-img .container-bg select {
     outline: none;
     cursor: pointer;
     border-radius: 5px;
     border: none;
+    width: 30px;
+    width: 50%;
+    height: 30px;
 }
-#btn-reset{
+
+#btn-reset {
     width: 100px;
     height: 30px;
     margin-top: 20px;
@@ -209,66 +230,70 @@ font-weight: bold;
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
-
 }
 
 /* Modal dos ---- texto  */
-.modal-text{
+.modal-text {
     display: flex;
+    width: 100%;
     flex-direction: column;
     padding: 25px 15px;
-    
 }
 
-.modal-text h2{
+.modal-text h2 {
     padding-bottom: 20px;
     text-align: center;
 }
-.label-tb{
+
+.label-tb {
     display: flex;
     flex-direction: column;
     margin: 5px 0;
     font-size: 15px;
     font-weight: bold;
 }
-.label-tb textarea{
+
+.label-tb textarea {
     width: 100%;
     height: 30px;
     border-radius: 5px;
     outline: none;
     border: none;
     padding: 7px;
-
 }
-.checkbox-one{
+
+.checkbox-one {
     padding: 10px 0;
     font-size: 11px;
 }
 
-
-.modal-text .font-container{
+.modal-text .font-container {
     display: flex;
     flex-direction: column;
     margin: 15px 0;
 }
-h3{
+
+.modal-text h3 {
     margin: 5px 0;
     font-size: 15px;
 }
-.modal-text .font-container #font-family{
- width: 100%;
- height: 30px;
- margin-bottom: 3px;
- cursor: pointer;
- border-radius: 5px;
- border: none;
- outline: none;
+
+.modal-text .font-container #font-family {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }
-.container-ipt-btn{
+
+.container-ipt-btn {
     display: flex;
     gap: 7px;
 }
-#font-size{
+
+#font-size {
     width: 50%;
     height: 30px;
     border-radius: 5px;
@@ -276,13 +301,13 @@ h3{
     outline: none;
     cursor: pointer;
 }
-.container-ipt-btn .align-text{
+
+.container-ipt-btn .align-text {
     width: 50%;
     height: 30px;
-
 }
 
-.container-ipt-btn .align-text button{
+.container-ipt-btn .align-text button {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -291,13 +316,14 @@ h3{
     border: none;
 }
 
-.color-container{
+.color-container {
     width: 100%;
     display: flex;
     gap: 10px;
-    
 }
-.color-container .selector-color .input-color, .input-bg{
+
+.color-container .selector-color .input-color,
+.input-bg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,84 +338,128 @@ h3{
     border-radius: 5px;
 }
 
-#color-font, #bg-font{
+#color-font,
+#bg-font {
     width: 20px;
     height: 20px;
     border: none;
     outline: none;
-    border-radius: 50%;  
+    border-radius: 50%;
     cursor: pointer;
 }
-.container-outline{
-    margin:  15px 0;
+
+.container-outline {
+    margin: 15px 0;
 }
 
-.container-outline .btn-outline button{
+.container-outline .btn-outline button {
     width: 30%;
     height: 30px;
     cursor: pointer;
     border-radius: 5px;
     border: none;
-
 }
-.container-spacing #spacing{
+
+.container-spacing #spacing {
     width: 100%;
     height: 30px;
     border-radius: 5px;
     border: none;
     outline: none;
-    
 }
-#line-spacing{
+
+#line-spacing {
     width: 100%;
     height: 30px;
     cursor: pointer;
     border-radius: 5px;
     border: none;
     outline: none;
-    
-
 }
+
 /*Modo Oscuro */
-.dark-mode #titulo{
+.dark-mode #titulo {
     color: #ffffff;
 }
 
-.dark-mode aside{
+.dark-mode aside {
     background-color: #000000d8;
     color: #ffffff;
 }
-.dark-mode main{
+
+.dark-mode main {
     background-image: url(imagenes/bg-dm.jpg);
 }
-.dark-mode header{
-    background-color:#000000eb ;
+
+.dark-mode header {
+    background-color: #000000eb;
     color: #ffffff;
 }
+
 /* Modal  js*/
-.open{
+.open {
     display: flex;
 }
-.close{
+
+.close {
     display: none;
 }
 
 /* boton de color */
-
 input[type="color"] {
     -webkit-appearance: none;
     border: none;
     background-color: transparent;
     width: 20px;
     height: 20px;
-  }
-  input[type="color"]::-webkit-color-swatch-wrapper {
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
-  }
-  input[type="color"]::-webkit-color-swatch {
+}
+
+input[type="color"]::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
-  }
-  
- 
+}
 
+@media (max-width: 880px) {
+    aside {
+        width: 30%;
+        padding: 10px;
+    }
+
+    .modal-img .container-bg {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .modal-img h3 {
+        margin-top: 10px;
+    }
+
+    .modal-img .container-bg .input-color-img,
+    .modal-img .container-bg select {
+        width: 100%;
+    }
+
+    /* texto */
+
+    .container-ipt-btn {
+        flex-direction: column;
+    }
+
+    .color-container {
+        flex-direction: column;
+    }
+
+    .container-ipt-btn .align-text {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #font-size {
+        width: 100%;
+    }
+}
