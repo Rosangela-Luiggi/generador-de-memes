@@ -26,3 +26,6 @@ Para la incorporación de iconos y fuentes de letras apliqué las siguientes fue
 #### Celulares
 
     -Medida: max-widht: 440px.
+
+    ### Para Visyalizar el resultado.
+[ENLACE] ( https://rosangela-luiggi.github.io/generador-de-memes/)
