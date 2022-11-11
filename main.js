@@ -106,7 +106,8 @@ const descargarMeme = () => {
 btnDarkMode.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
   if (body.classList.contains("dark-mode")) {
-    btnDarkMode.innerHTML ='<i class="fa-regular fa-lightbulb"></i> Modo Claro';
+    btnDarkMode.innerHTML =
+      '<i class="fa-regular fa-lightbulb"></i> Modo Claro';
   } else {
     btnDarkMode.innerHTML = '<i class="fa-solid fa-lightbulb"></i> Modo Oscuro';
   }
@@ -261,8 +262,8 @@ inputEspaciado.addEventListener("input", (event) => {
 let inputInterLinea = $("#line-spacing");
 inputInterLinea.addEventListener("input", (event) => {
   let medidaLinea = event.target.value;
-  divTop.style.lineHeight = `${medidaLinea}rem`;
-  divBottom.style.lineHeight = `${medidaLinea}rem`;
+  divTop.style.lineHeight = `${medidaLinea}`;
+  divBottom.style.lineHeight = `${medidaLinea}`;
 });
 
 //Descargar Imagen
